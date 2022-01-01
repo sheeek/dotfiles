@@ -1,3 +1,13 @@
+""""""""""""""""""""""""""""""
+" => PLUGIN MANAGER
+""""""""""""""""""""""""""""""
+
+call plug#begin('~/.vim/plugged')
+
+    Plug 'vimwiki/vimwiki'
+
+call plug#end()
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -89,3 +99,8 @@ set laststatus=2
 " set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
+""""""""""""""""""""""""""""""
+" => PLUGIN VimWiki
+""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
