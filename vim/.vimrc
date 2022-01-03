@@ -1,10 +1,11 @@
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
 " => PLUGIN MANAGER
 """"""""""""""""""""""""""""""
 
 call plug#begin('~/.vim/plugged')
 
     Plug 'vimwiki/vimwiki'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
