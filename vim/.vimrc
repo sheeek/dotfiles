@@ -43,6 +43,28 @@ set tm=500
 set foldcolumn=1
 
 
+
+"""""""""""""""""""""""""""""
+" => Switchlines with Control-j Control-k
+""""""""""""""""""""""""""""""
+
+fun SwitchLine(src_line_idx, direction)
+    if a:direction ==# 'up'
+        if a:src_line_idx == 1
+            return
+        endif
+        move-2
+    elseif a:direction ==# 'down'
+        if a:src_line_idx == line('$')
+            return
+        endif
+        move+1
+    endif
+endf
+
+nnoremap <silent> <C-k> :call SwitchLine(line('.'), 'up')<CR>
+nnoremap <silent> <C-j> :call SwitchLine(line('.'), 'down')<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
